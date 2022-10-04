@@ -1,8 +1,8 @@
 .cabecalho {
+  background-color: #282c34;
+  color: white;
   display: flex;
   justify-content: end;
-  color: white;
-  background-color: #282c34;
 }
 
 .h3header {
