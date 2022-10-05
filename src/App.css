@@ -8,3 +8,11 @@
 .h3header {
   margin-right: 15px;
 }
+
+.formWallet {
+  align-items: center;
+  background-color: rgb(19, 5, 62);
+  color: white;
+  display: flex;
+  padding: 10px 0px;
+}

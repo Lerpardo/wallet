@@ -1,4 +1,4 @@
-import { LOGIN_ACTION, WALLET_ACTION, API_REQUEST } from './actionsTypes';
+import { LOGIN_ACTION, WALLET_ACTION, API_REQUEST, SEND_EXPENDS } from './actionsTypes';
 
 export const sendLoginUser = (userData) => ({
   type: LOGIN_ACTION,
@@ -14,4 +14,12 @@ export const sendWallet = (walletData) => ({
 export const currenciesData = (data) => ({
   type: API_REQUEST,
   payload: Object.keys(data).filter((element) => element !== 'USDT'),
+});
+
+export const setExpenses = (expenses, cambio) => ({
+  type: SEND_EXPENDS,
+  payload: {
+    ...expenses,
+    exchangeRates: cambio,
+  },
 });

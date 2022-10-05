@@ -1,4 +1,4 @@
-import { WALLET_ACTION, API_REQUEST } from '../actions/actionsTypes';
+import { WALLET_ACTION, API_REQUEST, SEND_EXPENDS } from '../actions/actionsTypes';
 
 const initState = {
   currencies: [],
@@ -13,6 +13,8 @@ const wallet = (state = initState, action) => {
     return { ...state, ...action.payload };
   case API_REQUEST:
     return { ...state, currencies: action.payload };
+  case SEND_EXPENDS:
+    return { ...state, expenses: [...state.expenses, action.payload] };
   default:
     return state;
   }
