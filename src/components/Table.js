@@ -21,20 +21,27 @@ class Table extends Component {
             <th scope="col">Editar/Excluir</th>
           </tr>
         </thead>
-        { expenses.map((e, i) => (
-          <tr key={ i }>
-            <th>{e.description}</th>
-            <th>{e.tag}</th>
-            <th>{e.method}</th>
-            <th>{Number(e.value).toFixed(2)}</th>
-            <th>{e.currency}</th>
-            <th>{e.exchangeRates[e.currency].name}</th>
-            <th>{Number(e.exchangeRates[e.currency].ask).toFixed(2)}</th>
-            <th>Real</th>
-            <button type="button">Editar</button>
-            <button type="button">Excluir</button>
-          </tr>
-        ))}
+        <tbody>
+          { expenses.map((e, i) => (
+            <tr key={ i }>
+              <td>{e.description}</td>
+              <td>{e.tag}</td>
+              <td>{e.method}</td>
+              <td>{Number(e.value).toFixed(2)}</td>
+              <td>{e.exchangeRates[e.currency].name}</td>
+              <td>{Number(e.exchangeRates[e.currency].ask).toFixed(2)}</td>
+              <td>
+                {
+                  (Number(e.value) * Number(e.exchangeRates[e.currency].ask)).toFixed(2)
+                }
+
+              </td>
+              <td>Real</td>
+              <button type="button">Editar</button>
+              <button type="button">Excluir</button>
+            </tr>
+          ))}
+        </tbody>
       </table>
     );
   }
