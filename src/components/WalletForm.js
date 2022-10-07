@@ -18,6 +18,7 @@ class WalletForm extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
   handleChange({ target }) {
@@ -34,9 +35,13 @@ class WalletForm extends Component {
     this.setState(initial);
   };
 
+  handleEdit = () => {
+    console.log('clicou');
+  };
+
   render() {
     const { value, description, currency, method, tag } = this.state;
-    const { currencies } = this.props;
+    const { currencies, editor } = this.props;
     return (
       <form className="formWallet">
         <label htmlFor="valueAtr">
@@ -105,7 +110,19 @@ class WalletForm extends Component {
             onChange={ this.handleChange }
           />
         </label>
-        <button type="button" onClick={ this.handleSubmit }>Adicionar despesa</button>
+        {
+          !editor ? (
+            <button type="button" onClick={ this.handleSubmit }>Adicionar despesa</button>
+          ) : (
+            <button
+              type="button"
+              onClick={ this.handleEdit() }
+            >
+              Editar Despesa
+
+            </button>)
+        }
+
       </form>
     );
   }
@@ -113,6 +130,7 @@ class WalletForm extends Component {
 
 WalletForm.propTypes = {
   currencies: PropTypes.instanceOf(Array).isRequired,
+  editor: PropTypes.bool.isRequired,
   submitData: PropTypes.func.isRequired,
   expenses: PropTypes.instanceOf(Array).isRequired,
 };

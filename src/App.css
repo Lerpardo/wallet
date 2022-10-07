@@ -15,4 +15,27 @@
   color: white;
   display: flex;
   padding: 10px 1px;
+  font-size: 12px;
+  justify-content:space-around;
+}
+
+input {
+  text-align: center;
+  margin-left: 10px;
+}
+
+select {
+  margin-left: 10px;
+}
+table, th, td {
+  border: 1px solid;
+}
+
+td {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  font-size: 12px;
 }
