@@ -14,20 +14,22 @@
   background-color: rgb(19, 5, 62);
   color: white;
   display: flex;
-  padding: 10px 1px;
   font-size: 12px;
-  justify-content:space-around;
+  padding: 10px 1px;
+  justify-content: space-around;
 }
 
 input {
-  text-align: center;
   margin-left: 10px;
+  text-align: center;
 }
 
 select {
   margin-left: 10px;
 }
-table, th, td {
+table,
+th,
+td {
   border: 1px solid;
 }
 
@@ -36,6 +38,6 @@ td {
 }
 
 table {
-  width: 100%;
   font-size: 12px;
+  width: 100%;
 }
