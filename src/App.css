@@ -15,8 +15,8 @@
   color: white;
   display: flex;
   font-size: 12px;
-  padding: 10px 1px;
   justify-content: space-around;
+  padding: 10px 1px;
 }
 
 input {
@@ -27,8 +27,9 @@ input {
 select {
   margin-left: 10px;
 }
-table,
-th,
+
+table, 
+th, 
 td {
   border: 1px solid;
 }
