@@ -28,9 +28,7 @@ select {
   margin-left: 10px;
 }
 
-table, 
-th, 
-td {
+table, th, td {
   border: 1px solid;
 }
 
