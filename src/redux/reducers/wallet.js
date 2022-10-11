@@ -1,6 +1,6 @@
 import {
   WALLET_ACTION,
-  API_REQUEST, SEND_EXPENDS, DELETE_EXPENDS, EDIT_EXPENDES,
+  API_REQUEST, SEND_EXPENDS, DELETE_EXPENDS, EDIT_EXPENDES, SET_EDIT,
 } from '../actions/actionsTypes';
 
 const initState = {
@@ -25,6 +25,8 @@ const wallet = (state = initState, action) => {
     };
   case EDIT_EXPENDES:
     return { ...state, editor: !state.editor, idToEdit: action.payload };
+  case SET_EDIT:
+    return { ...state, expenses: action.payload, editor: false };
   default:
     return state;
   }

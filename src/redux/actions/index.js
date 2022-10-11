@@ -2,7 +2,7 @@ import {
   LOGIN_ACTION,
   WALLET_ACTION,
   API_REQUEST,
-  SEND_EXPENDS, DELETE_EXPENDS, EDIT_EXPENDES } from './actionsTypes';
+  SEND_EXPENDS, DELETE_EXPENDS, EDIT_EXPENDES, SET_EDIT } from './actionsTypes';
 
 export const sendLoginUser = (userData) => ({
   type: LOGIN_ACTION,
@@ -36,4 +36,9 @@ export const delExpenses = (i, e) => ({
 export const edExpenses = (elemento) => ({
   type: EDIT_EXPENDES,
   payload: elemento.id,
+});
+
+export const setEdit = (objeto) => ({
+  type: SET_EDIT,
+  payload: objeto,
 });

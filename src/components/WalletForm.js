@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { setExpenses } from '../redux/actions/index';
+import { setExpenses, setEdit } from '../redux/actions/index';
+// import { testGlobal } from '../redux/actions/func';
 
 const initial = {
   value: '',
@@ -22,8 +23,10 @@ class WalletForm extends Component {
   }
 
   handleChange({ target }) {
+    // const { editor, idToEdit, expenses } = this.props;
     const { name, value } = target;
     this.setState({ [name]: value });
+    // if (editor) testGlobal(expenses[idToEdit]);
   }
 
   handleSubmit = async () => {
@@ -35,8 +38,21 @@ class WalletForm extends Component {
     this.setState(initial);
   };
 
-  handleEdit = () => {
-    console.log('clicou');
+  handleEdit = async () => {
+    const request = await fetch('https://economia.awesomeapi.com.br/json/all');
+    const response = await request.json();
+    const { idToEdit, expenses, submitEdit } = this.props;
+    console.log(expenses[idToEdit]);
+    const mutante = [...expenses];
+
+    const index = mutante.splice(idToEdit);
+    index.shift();
+    const leitura = [...mutante, {
+      id: idToEdit, ...this.state, exchangeRates: response }, ...index];
+    submitEdit(leitura);
+
+    this.setState(initial);
+    console.log(leitura);
   };
 
   render() {
@@ -116,7 +132,7 @@ class WalletForm extends Component {
           ) : (
             <button
               type="button"
-              onClick={ this.handleEdit() }
+              onClick={ this.handleEdit }
             >
               Editar Despesa
 
@@ -133,6 +149,8 @@ WalletForm.propTypes = {
   editor: PropTypes.bool.isRequired,
   submitData: PropTypes.func.isRequired,
   expenses: PropTypes.instanceOf(Array).isRequired,
+  idToEdit: PropTypes.number.isRequired,
+  submitEdit: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -141,6 +159,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   submitData: (expense, cambio) => dispatch(setExpenses(expense, cambio)),
+  submitEdit: (edited) => dispatch(setEdit(edited)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(WalletForm);

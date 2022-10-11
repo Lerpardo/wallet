@@ -13,7 +13,6 @@ class Table extends Component {
   deleteExpense = (id) => {
     const { delExp, expenses } = this.props;
     delExp(id, expenses);
-    console.log(id);
   };
 
   editExpense = (elemento) => {

@@ -35,7 +35,8 @@ class Login extends React.Component {
     const limitador = 6;
     const able = (stringEmail.test(email) && password.length >= limitador);
     return (
-      <form onSubmit={ this.handleSubmit }>
+      <form className="loggin-page" onSubmit={ this.handleSubmit }>
+        <img src="https://cdn.dribbble.com/users/3302289/screenshots/10876331/e2wallet.png" width="100vw" alt="formlog" />
         <input
           data-testid="email-input"
           onChange={ this.handleChange }
