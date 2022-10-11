@@ -1,18 +1,11 @@
 import {
   LOGIN_ACTION,
-  WALLET_ACTION,
   API_REQUEST,
   SEND_EXPENDS, DELETE_EXPENDS, EDIT_EXPENDES, SET_EDIT } from './actionsTypes';
 
 export const sendLoginUser = (userData) => ({
   type: LOGIN_ACTION,
   payload: userData,
-});
-
-export const sendWallet = (walletData) => ({
-  type: WALLET_ACTION,
-  payload: walletData,
-
 });
 
 export const currenciesData = (data) => ({

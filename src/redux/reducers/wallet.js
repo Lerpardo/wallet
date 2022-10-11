@@ -1,5 +1,4 @@
 import {
-  WALLET_ACTION,
   API_REQUEST, SEND_EXPENDS, DELETE_EXPENDS, EDIT_EXPENDES, SET_EDIT,
 } from '../actions/actionsTypes';
 
@@ -12,8 +11,6 @@ const initState = {
 
 const wallet = (state = initState, action) => {
   switch (action.type) {
-  case WALLET_ACTION:
-    return { ...state, ...action.payload };
   case API_REQUEST:
     return { ...state, currencies: action.payload };
   case SEND_EXPENDS:
