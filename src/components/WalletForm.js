@@ -42,7 +42,6 @@ class WalletForm extends Component {
     const request = await fetch('https://economia.awesomeapi.com.br/json/all');
     const response = await request.json();
     const { idToEdit, expenses, submitEdit } = this.props;
-    console.log(expenses[idToEdit]);
     const mutante = [...expenses];
 
     const index = mutante.splice(idToEdit);
@@ -52,7 +51,6 @@ class WalletForm extends Component {
     submitEdit(leitura);
 
     this.setState(initial);
-    console.log(leitura);
   };
 
   render() {
