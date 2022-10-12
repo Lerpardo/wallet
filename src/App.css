@@ -23,8 +23,8 @@
 
 input {
   margin-left: 10px;
-  text-align: center;
   margin-bottom: 1px;
+  text-align: center;
 }
 
 select {
@@ -44,11 +44,9 @@ table {
   width: 100%;
 }
 
-
-
-.loggin-page, .dvt {
-  background-color: grey;
+.loggin-page , .dvt {
   align-items: center;
+  background-color: grey;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -57,11 +55,11 @@ table {
 }
 
 .dvt {
-  width: 50%;
-  height: 65%;
   background-color: white;
   border-radius: 15px;
   box-shadow: 10px 5px 5px rgb(92, 91, 91);
+  height: 65%;
+  width: 50%;
 }
 
 img {
