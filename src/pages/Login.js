@@ -36,24 +36,27 @@ class Login extends React.Component {
     const able = (stringEmail.test(email) && password.length >= limitador);
     return (
       <form className="loggin-page" onSubmit={ this.handleSubmit }>
-        <img src="https://cdn.dribbble.com/users/3302289/screenshots/10876331/e2wallet.png" width="100vw" alt="formlog" />
-        <input
-          data-testid="email-input"
-          onChange={ this.handleChange }
-          value={ email }
-          type="email"
-          name="email"
-          required
-        />
-        <input
-          data-testid="password-input"
-          onChange={ this.handleChange }
-          type="password"
-          value={ password }
-          name="password"
-          minLength="6"
-        />
-        <button disabled={ !able } type="submit">Entrar</button>
+        <div className="dvt">
+          <img src="https://cdn.dribbble.com/users/3302289/screenshots/10876331/e2wallet.png" width="100vw" alt="formlog" />
+          <input
+            data-testid="email-input"
+            className="loginInput"
+            onChange={ this.handleChange }
+            value={ email }
+            type="email"
+            name="email"
+            required
+          />
+          <input
+            data-testid="password-input"
+            onChange={ this.handleChange }
+            type="password"
+            value={ password }
+            name="password"
+            minLength="6"
+          />
+          <button disabled={ !able } type="submit">Entrar</button>
+        </div>
       </form>
     );
   }
