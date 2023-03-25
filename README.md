@@ -45,7 +45,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 - Created asynchronous _actions_ in your React application that uses Redux.
 
-## Leassons Learned
+## Lessons Learned
 
 In this project Redux was used to manage the state, RTL was also used to cover the entire application with tests. At first it was a little difficult to understand how Redux works but after practice, everything went smoothly.
 
