@@ -7,7 +7,7 @@ Project made to help with finances with the option of exchanging other currencie
 Cloning the repository
 
 ```bash
-  git clone git@github.com:Lerpardo/wallet.git
+  git clone git@github.com:beterrabaA/wallet.git
   cd wallet
 ```
 
